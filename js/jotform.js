@@ -6037,7 +6037,6 @@ var JotForm = {
             }
             if ((condition.link.toLowerCase() == 'any' && any) || (condition.link.toLowerCase() == 'all' && all)) {
                 calc.conditionTrue = true;
-                if(JotForm.ignoreInsertionCondition) return;
                 JotForm.checkCalculation(calc);
             } else {
                 calc.conditionTrue = false;
@@ -6676,10 +6675,9 @@ var JotForm = {
         });
     },
 
-    runAllCalculations: function (ignoreEditable, htmlOnly) {
+    runAllCalculations: function (ignoreEditable, tagReplacementOnly) {
         $A(JotForm.calculations).each(function (calc, index) {
-            if(htmlOnly && JotForm.getInputType(calc.resultField) !== "html") return;
-            if (!(ignoreEditable && (!calc.readOnly || calc.readOnly == "0")) && !!calc.equation) {
+            if (!(tagReplacementOnly && calc.tagReplacement !== '1') && !(ignoreEditable && (!calc.readOnly || calc.readOnly == "0")) && !!calc.equation) {
                 JotForm.checkCalculation(calc);
             }
         });
@@ -6750,6 +6748,8 @@ var JotForm = {
     },
 
     checkCalculation: function (calc) {
+        if(JotForm.ignoreInsertionCondition) return;
+
         if (!calc.resultField || (calc.hasOwnProperty('conditionTrue') && !calc.conditionTrue)) {
             return '';
         }
@@ -11313,7 +11313,7 @@ var JotForm = {
                 }, 40);
 
                 setTimeout(function () {
-                    JotForm.runAllConditions();
+                    JotForm.runAllConditions(true);
                 }, 50);
             };
         });
@@ -14468,15 +14468,13 @@ var JotForm = {
                                 if(range[0].indexOf("{") > -1) {
                                     startDate = JotForm.dateFromField(range[0]);
                                 } else {
-                                    var start = range[0].split("-");
-                                    startDate = new Date(start[0], parseInt(start[1])-1, start[2]);
+                                    startDate = new Date(range[0]);
                                 }
                                 var endDate;
                                 if(range[1].indexOf("{") > -1) {
                                     endDate = JotForm.dateFromField(range[1]);
                                 } else {
-                                    var end = range[1].split("-");
-                                    endDate = new Date(end[0], parseInt(end[1])-1, end[2]);
+                                    endDate = new Date(range[1]);
                                 }
                                 if(endDate) {
                                     endDate.setDate(endDate.getDate() + 1);
@@ -15784,7 +15782,12 @@ var JotForm = {
 
     },
 
-    runAllConditions: function () {
+    runAllConditions: function (allowInsertion) {
+        if (!allowInsertion && JotForm.isEditMode()) {
+            // not ignore insertion condition if save&continue is actived
+            var isCardFormContinueLater = !!window.CardForm && window.CardForm.continueLater && window.CardForm.continueLater.active;
+            JotForm.ignoreInsertionCondition = !isCardFormContinueLater && (!JotForm.isNewSaveAndContinueLaterActive && document.location.href.indexOf('session=') === -1);
+        }
         $H(JotForm.fieldConditions).each(function (pair) {
             var field = pair.key;
             var event = pair.value.event;
@@ -15794,7 +15797,7 @@ var JotForm = {
             if (["autofill", "number", "autocomplete"].include(event)) event = "keyup";
             $(field).run(event);
         });
-        if (JotForm.isEditMode()) {
+        if (!allowInsertion && JotForm.isEditMode()) {
             JotForm.ignoreInsertionCondition = null;
         }
     },
