@@ -40,9 +40,9 @@
   <link type="text/css" rel="stylesheet"
     href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f30e2a790832f3e96009402" />
   <link type="text/css" rel="stylesheet"
-    href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.28504" />
+    href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.28519" />
   <link type="text/css" rel="stylesheet"
-    href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.28504" />
+    href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.28519" />
   <style type="text/css" id="form-designer-style">
     /* Injected CSS Code */
     /*PREFERENCES STYLE*/
@@ -204,7 +204,7 @@
   </style>
 
   <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
-  <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.28504" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.28519" type="text/javascript"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
   <script type="text/javascript">	JotForm.newDefaultTheme = true;
     JotForm.extendsNewTheme = false;
@@ -218,6 +218,7 @@
       setTimeout(function () {
         $('input_7').hint('ex: myname@example.com');
       }, 20);
+      if (window.JotForm && JotForm.accessible) $('input_54').setAttribute('tabindex', 0);
       setTimeout(function () {
         $('input_29').hint('ex: 17');
       }, 20);
@@ -247,9 +248,9 @@
       /*INIT-END*/
     });
 
-    JotForm.prepareCalculationsOnTheFly([null, { "name": "fullName1", "qid": "1", "text": "Full Name", "type": "control_fullname" }, null, null, null, { "name": "whichCountry5", "qid": "5", "text": "Which country are you attending school in?", "type": "control_dropdown" }, null, { "name": "yourEmail7", "qid": "7", "subLabel": "If you have a school email address, please use that.", "text": "Your Email Address", "type": "control_email" }, null, null, null, { "name": "howWould", "qid": "11", "text": "How would you describe your project? Select as many or as few as you like.", "type": "control_checkbox" }, null, null, null, null, { "name": "tecsApplication", "qid": "16", "text": "TECS Application", "type": "control_head" }, { "name": "submitApplication", "qid": "17", "text": "Submit Application", "type": "control_button" }, null, null, null, null, null, null, null, { "description": "", "name": "whichSchool25", "qid": "25", "subLabel": "Full name of your school", "text": "Which school do you attend?", "type": "control_textbox" }, { "description": "", "name": "whatIs", "qid": "26", "subLabel": "Tell us what you want to do, and include some details about how you&#039;ll do it. Explain as if we know nothing about your project.", "text": "What is your project?", "type": "control_textarea" }, null, null, { "description": "", "name": "howOld29", "qid": "29", "subLabel": "Your age in years", "text": "How old are you?", "type": "control_number" }, null, { "name": "aboutYour31", "qid": "31", "text": "About Your Project", "type": "control_head" }, { "name": "yourBackground", "qid": "32", "text": "Your Background", "type": "control_head" }, { "description": "", "name": "whatHave33", "qid": "33", "subLabel": "We&#039;re trying to get an idea here of what your starting skills and experience are. Don&#039;t worry if you can&#039;t think of much to mention here, but do include anything that comes to mind! ", "text": "What have you worked on previously? Please include any projects or work that you are proud of, and specify how far they progressed. ", "type": "control_textarea" }, null, { "description": "", "name": "whichYear35", "qid": "35", "text": "Which year are you in?", "type": "control_radio" }, { "description": "", "name": "gender", "qid": "36", "text": "Gender", "type": "control_radio" }, { "description": "", "name": "whereIs37", "qid": "37", "subLabel": "Please include the town \u002F village that your school is located in.", "text": "Where is your school?", "type": "control_textbox" }, { "description": "", "name": "yourAddress", "qid": "38", "subLabel": "Please include your postcode", "text": "Your Address", "type": "control_textbox" }, { "description": "", "name": "pleaseConfirm39", "qid": "39", "text": "Please confirm that a Parent\u002FGuardian has consented to your participation in TECS", "type": "control_radio" }, null, { "description": "", "name": "whatAre", "qid": "41", "subLabel": "", "text": "What are some communities or groups that you are interested in? Please include any clubs, meet-ups, classes, discords etc. that come to mind.", "type": "control_textarea" }, null, { "description": "", "name": "howDid", "qid": "43", "text": "How did you hear about TECS?", "type": "control_checkbox" }, { "description": "", "name": "whyAre", "qid": "44", "subLabel": "&#039;Because it&#039;s interesting to me&#039; is a sufficient answer!", "text": "Why are you working on this project?", "type": "control_textarea" }, { "description": "", "name": "whatDo45", "qid": "45", "subLabel": "Include some specific goals.", "text": "What do you hope to accomplish by the end of November?", "type": "control_textarea" }, { "description": "", "name": "whatStage46", "qid": "46", "text": "What stage is your project at?", "type": "control_radio" }, null, { "description": "", "name": "isAnybody", "qid": "48", "text": "Is anybody else working on this project with you?", "type": "control_radio" }, { "description": "", "name": "whatsThe", "qid": "49", "subLabel": "", "text": "What's the name and role of the person who's working on this project with you? Are they a classmate, colleague, or a mentor?", "type": "control_textbox" }, { "description": "", "name": "whatProgress", "qid": "50", "subLabel": "You might have just started your research, or be further along. Up to 140 characters - ", "text": "What progress have you made with your project so far?", "type": "control_textarea" }]);
+    JotForm.prepareCalculationsOnTheFly([null, { "name": "fullName1", "qid": "1", "text": "Full Name", "type": "control_fullname" }, null, null, null, { "name": "whichCountry5", "qid": "5", "text": "Which country are you attending school in?", "type": "control_dropdown" }, null, { "name": "yourEmail7", "qid": "7", "subLabel": "If you have a school email address, please use that.", "text": "Your Email Address", "type": "control_email" }, null, null, null, { "name": "howWould", "qid": "11", "text": "How would you describe your project? Select as many or as few as you like.", "type": "control_checkbox" }, null, null, null, null, { "name": "tecsApplication", "qid": "16", "text": "TECS Application", "type": "control_head" }, { "name": "submitApplication", "qid": "17", "text": "Submit Application", "type": "control_button" }, null, null, null, null, null, null, null, { "description": "", "name": "whichSchool25", "qid": "25", "subLabel": "Full name of your school", "text": "Which school do you attend?", "type": "control_textbox" }, { "description": "", "name": "whatIs", "qid": "26", "subLabel": "Tell us what you want to do, and include some details about how you&#039;ll do it. Explain as if we know nothing about your project.", "text": "What is your project?", "type": "control_textarea" }, null, null, { "description": "", "name": "howOld29", "qid": "29", "subLabel": "Your age in years", "text": "How old are you?", "type": "control_number" }, null, { "name": "aboutYour31", "qid": "31", "text": "About Your Project", "type": "control_head" }, { "name": "yourBackground", "qid": "32", "text": "Your Background", "type": "control_head" }, { "description": "", "name": "whatHave33", "qid": "33", "subLabel": "We&#039;re trying to get an idea here of what your starting skills and experience are. Don&#039;t worry if you can&#039;t think of much to mention here, but do include anything that comes to mind! ", "text": "What have you worked on previously? Please include any projects or work that you are proud of, and specify how far they progressed. ", "type": "control_textarea" }, null, { "description": "", "name": "whichYear35", "qid": "35", "text": "Which year are you in?", "type": "control_radio" }, null, { "description": "", "name": "whereIs37", "qid": "37", "subLabel": "Please include the town \u002F village that your school is located in.", "text": "Where is your school?", "type": "control_textbox" }, { "description": "", "name": "yourAddress", "qid": "38", "subLabel": "Please include your postcode", "text": "Your Address", "type": "control_textbox" }, { "description": "", "name": "pleaseConfirm39", "qid": "39", "text": "Please confirm that a Parent\u002FGuardian has consented to your participation in TECS", "type": "control_radio" }, null, { "description": "", "name": "whatAre", "qid": "41", "subLabel": "", "text": "What are some communities or groups that you are interested in? Please include any clubs, meet-ups, classes, discords etc. that come to mind.", "type": "control_textarea" }, null, { "description": "", "name": "howDid", "qid": "43", "text": "How did you hear about TECS?", "type": "control_checkbox" }, { "description": "", "name": "whyAre", "qid": "44", "subLabel": "&#039;Because it&#039;s interesting to me&#039; is a sufficient answer!", "text": "Why are you working on this project?", "type": "control_textarea" }, { "description": "", "name": "whatDo45", "qid": "45", "subLabel": "Include some specific goals.", "text": "What do you hope to accomplish by the end of November?", "type": "control_textarea" }, { "description": "", "name": "whatStage46", "qid": "46", "text": "What stage is your project at?", "type": "control_radio" }, null, { "description": "", "name": "isAnybody", "qid": "48", "text": "Is anybody else working on this project with you?", "type": "control_radio" }, { "description": "", "name": "whatsThe", "qid": "49", "subLabel": "", "text": "What's the name and role of the person who's working on this project with you? Are they a classmate, colleague, or a mentor?", "type": "control_textbox" }, { "description": "", "name": "whatProgress", "qid": "50", "subLabel": "You might have just started your research, or be further along. Up to 140 characters - ", "text": "What progress have you made with your project so far?", "type": "control_textarea" }, null, null, null, { "description": "", "name": "gender", "qid": "54", "subLabel": "Please insert the gender you identify as, e.g. “female”, “male”, “agender”", "text": "Gender", "type": "control_textbox" }]);
     setTimeout(function () {
-      JotForm.paymentExtrasOnTheFly([null, { "name": "fullName1", "qid": "1", "text": "Full Name", "type": "control_fullname" }, null, null, null, { "name": "whichCountry5", "qid": "5", "text": "Which country are you attending school in?", "type": "control_dropdown" }, null, { "name": "yourEmail7", "qid": "7", "subLabel": "If you have a school email address, please use that.", "text": "Your Email Address", "type": "control_email" }, null, null, null, { "name": "howWould", "qid": "11", "text": "How would you describe your project? Select as many or as few as you like.", "type": "control_checkbox" }, null, null, null, null, { "name": "tecsApplication", "qid": "16", "text": "TECS Application", "type": "control_head" }, { "name": "submitApplication", "qid": "17", "text": "Submit Application", "type": "control_button" }, null, null, null, null, null, null, null, { "description": "", "name": "whichSchool25", "qid": "25", "subLabel": "Full name of your school", "text": "Which school do you attend?", "type": "control_textbox" }, { "description": "", "name": "whatIs", "qid": "26", "subLabel": "Tell us what you want to do, and include some details about how you&#039;ll do it. Explain as if we know nothing about your project.", "text": "What is your project?", "type": "control_textarea" }, null, null, { "description": "", "name": "howOld29", "qid": "29", "subLabel": "Your age in years", "text": "How old are you?", "type": "control_number" }, null, { "name": "aboutYour31", "qid": "31", "text": "About Your Project", "type": "control_head" }, { "name": "yourBackground", "qid": "32", "text": "Your Background", "type": "control_head" }, { "description": "", "name": "whatHave33", "qid": "33", "subLabel": "We&#039;re trying to get an idea here of what your starting skills and experience are. Don&#039;t worry if you can&#039;t think of much to mention here, but do include anything that comes to mind! ", "text": "What have you worked on previously? Please include any projects or work that you are proud of, and specify how far they progressed. ", "type": "control_textarea" }, null, { "description": "", "name": "whichYear35", "qid": "35", "text": "Which year are you in?", "type": "control_radio" }, { "description": "", "name": "gender", "qid": "36", "text": "Gender", "type": "control_radio" }, { "description": "", "name": "whereIs37", "qid": "37", "subLabel": "Please include the town \u002F village that your school is located in.", "text": "Where is your school?", "type": "control_textbox" }, { "description": "", "name": "yourAddress", "qid": "38", "subLabel": "Please include your postcode", "text": "Your Address", "type": "control_textbox" }, { "description": "", "name": "pleaseConfirm39", "qid": "39", "text": "Please confirm that a Parent\u002FGuardian has consented to your participation in TECS", "type": "control_radio" }, null, { "description": "", "name": "whatAre", "qid": "41", "subLabel": "", "text": "What are some communities or groups that you are interested in? Please include any clubs, meet-ups, classes, discords etc. that come to mind.", "type": "control_textarea" }, null, { "description": "", "name": "howDid", "qid": "43", "text": "How did you hear about TECS?", "type": "control_checkbox" }, { "description": "", "name": "whyAre", "qid": "44", "subLabel": "&#039;Because it&#039;s interesting to me&#039; is a sufficient answer!", "text": "Why are you working on this project?", "type": "control_textarea" }, { "description": "", "name": "whatDo45", "qid": "45", "subLabel": "Include some specific goals.", "text": "What do you hope to accomplish by the end of November?", "type": "control_textarea" }, { "description": "", "name": "whatStage46", "qid": "46", "text": "What stage is your project at?", "type": "control_radio" }, null, { "description": "", "name": "isAnybody", "qid": "48", "text": "Is anybody else working on this project with you?", "type": "control_radio" }, { "description": "", "name": "whatsThe", "qid": "49", "subLabel": "", "text": "What's the name and role of the person who's working on this project with you? Are they a classmate, colleague, or a mentor?", "type": "control_textbox" }, { "description": "", "name": "whatProgress", "qid": "50", "subLabel": "You might have just started your research, or be further along. Up to 140 characters - ", "text": "What progress have you made with your project so far?", "type": "control_textarea" }]);
+      JotForm.paymentExtrasOnTheFly([null, { "name": "fullName1", "qid": "1", "text": "Full Name", "type": "control_fullname" }, null, null, null, { "name": "whichCountry5", "qid": "5", "text": "Which country are you attending school in?", "type": "control_dropdown" }, null, { "name": "yourEmail7", "qid": "7", "subLabel": "If you have a school email address, please use that.", "text": "Your Email Address", "type": "control_email" }, null, null, null, { "name": "howWould", "qid": "11", "text": "How would you describe your project? Select as many or as few as you like.", "type": "control_checkbox" }, null, null, null, null, { "name": "tecsApplication", "qid": "16", "text": "TECS Application", "type": "control_head" }, { "name": "submitApplication", "qid": "17", "text": "Submit Application", "type": "control_button" }, null, null, null, null, null, null, null, { "description": "", "name": "whichSchool25", "qid": "25", "subLabel": "Full name of your school", "text": "Which school do you attend?", "type": "control_textbox" }, { "description": "", "name": "whatIs", "qid": "26", "subLabel": "Tell us what you want to do, and include some details about how you&#039;ll do it. Explain as if we know nothing about your project.", "text": "What is your project?", "type": "control_textarea" }, null, null, { "description": "", "name": "howOld29", "qid": "29", "subLabel": "Your age in years", "text": "How old are you?", "type": "control_number" }, null, { "name": "aboutYour31", "qid": "31", "text": "About Your Project", "type": "control_head" }, { "name": "yourBackground", "qid": "32", "text": "Your Background", "type": "control_head" }, { "description": "", "name": "whatHave33", "qid": "33", "subLabel": "We&#039;re trying to get an idea here of what your starting skills and experience are. Don&#039;t worry if you can&#039;t think of much to mention here, but do include anything that comes to mind! ", "text": "What have you worked on previously? Please include any projects or work that you are proud of, and specify how far they progressed. ", "type": "control_textarea" }, null, { "description": "", "name": "whichYear35", "qid": "35", "text": "Which year are you in?", "type": "control_radio" }, null, { "description": "", "name": "whereIs37", "qid": "37", "subLabel": "Please include the town \u002F village that your school is located in.", "text": "Where is your school?", "type": "control_textbox" }, { "description": "", "name": "yourAddress", "qid": "38", "subLabel": "Please include your postcode", "text": "Your Address", "type": "control_textbox" }, { "description": "", "name": "pleaseConfirm39", "qid": "39", "text": "Please confirm that a Parent\u002FGuardian has consented to your participation in TECS", "type": "control_radio" }, null, { "description": "", "name": "whatAre", "qid": "41", "subLabel": "", "text": "What are some communities or groups that you are interested in? Please include any clubs, meet-ups, classes, discords etc. that come to mind.", "type": "control_textarea" }, null, { "description": "", "name": "howDid", "qid": "43", "text": "How did you hear about TECS?", "type": "control_checkbox" }, { "description": "", "name": "whyAre", "qid": "44", "subLabel": "&#039;Because it&#039;s interesting to me&#039; is a sufficient answer!", "text": "Why are you working on this project?", "type": "control_textarea" }, { "description": "", "name": "whatDo45", "qid": "45", "subLabel": "Include some specific goals.", "text": "What do you hope to accomplish by the end of November?", "type": "control_textarea" }, { "description": "", "name": "whatStage46", "qid": "46", "text": "What stage is your project at?", "type": "control_radio" }, null, { "description": "", "name": "isAnybody", "qid": "48", "text": "Is anybody else working on this project with you?", "type": "control_radio" }, { "description": "", "name": "whatsThe", "qid": "49", "subLabel": "", "text": "What's the name and role of the person who's working on this project with you? Are they a classmate, colleague, or a mentor?", "type": "control_textbox" }, { "description": "", "name": "whatProgress", "qid": "50", "subLabel": "You might have just started your research, or be further along. Up to 140 characters - ", "text": "What progress have you made with your project so far?", "type": "control_textarea" }, null, null, null, { "description": "", "name": "gender", "qid": "54", "subLabel": "Please insert the gender you identify as, e.g. “female”, “male”, “agender”", "text": "Gender", "type": "control_textbox" }]);
     }, 20);
   </script>
 </head>
@@ -337,6 +338,18 @@
             </div>
           </div>
         </li>
+        <li class="form-line" data-type="control_textbox" id="id_54">
+          <label class="form-label form-label-top form-label-auto" id="label_54" for="input_54"> Gender </label>
+          <div id="cid_54" class="form-input-wide" data-layout="half">
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <input type="text" id="input_54" name="q54_gender" data-type="input-textbox" class="form-textbox"
+                data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox"
+                aria-labelledby="label_54 sublabel_input_54" />
+              <label class="form-sub-label" for="input_54" id="sublabel_input_54" style="min-height:13px"
+                aria-hidden="false"> Please insert the gender you identify as, e.g. “female”, “male”, “agender” </label>
+            </span>
+          </div>
+        </li>
         <li class="form-line jf-required" data-type="control_number" id="id_29">
           <label class="form-label form-label-top form-label-auto" id="label_29" for="input_29">
             How old are you?
@@ -353,42 +366,6 @@
               <label class="form-sub-label" for="input_29" id="sublabel_input_29" style="min-height:13px"
                 aria-hidden="false"> Your age in years </label>
             </span>
-          </div>
-        </li>
-        <li class="form-line jf-required" data-type="control_radio" id="id_36">
-          <label class="form-label form-label-top form-label-auto" id="label_36" for="input_36">
-            Gender
-            <span class="form-required">
-              *
-            </span>
-          </label>
-          <div id="cid_36" class="form-input-wide jf-required" data-layout="full">
-            <div class="form-single-column" role="group" aria-labelledby="label_36" data-component="radio">
-              <span class="form-radio-item" style="clear:left">
-                <span class="dragger-item">
-                </span>
-                <input type="radio" aria-describedby="label_36" class="form-radio validate[required]" id="input_36_0"
-                  name="q36_gender" value="Female" required="" />
-                <label id="label_input_36_0" for="input_36_0"> Female </label>
-              </span>
-              <span class="form-radio-item" style="clear:left">
-                <span class="dragger-item">
-                </span>
-                <input type="radio" aria-describedby="label_36" class="form-radio validate[required]" id="input_36_1"
-                  name="q36_gender" value="Male" required="" />
-                <label id="label_input_36_1" for="input_36_1"> Male </label>
-              </span>
-              <span class="form-radio-item formRadioOther" style="clear:left">
-                <input type="radio" class="form-radio-other form-radio validate[required]" name="q36_gender"
-                  id="other_36" value="other" aria-label="Other" />
-                <label id="label_other_36" style="text-indent:0" for="other_36"> Other </label>
-                <span id="other_36_input" class="other-input-container" style="display:none">
-                  <input type="text" class="form-radio-other-input form-textbox" name="q36_gender[other]"
-                    data-otherhint="Other" size="15" id="input_36" data-placeholder="Please type another option here"
-                    placeholder="Please type another option here" />
-                </span>
-              </span>
-            </div>
           </div>
         </li>
         <li class="form-line jf-required" data-type="control_textbox" id="id_38">
@@ -943,24 +920,11 @@
         </li>
       </ul>
     </div>
-    <script>
-      JotForm.showJotFormPowered = "new_footer";
-    </script>
-    <script>
-      JotForm.poweredByText = "Powered by Jotform";
-    </script>
-    <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="212846623950358" />
-    <script type="text/javascript">
-      var all_spc = document.querySelectorAll("form[id='212846623950358'] .si" + "mple" + "_spc");
-      for (var i = 0; i < all_spc.length; i++) {
-        all_spc[i].value = "212846623950358-212846623950358";
-      }
-    </script>
   </form>
 </body>
 
 </html>
 <script type="text/javascript">JotForm.ownerView = true;</script>
 <script type="text/javascript">JotForm.forwardToEu = true;</script>
-<script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.28504"></script>
-<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.28504"></script>
+<script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.28519"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.28519"></script>
