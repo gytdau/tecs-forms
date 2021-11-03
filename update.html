@@ -483,16 +483,21 @@
               if (day.length < 2) 
                   day = '0' + day;
 
-              return [month, day, year].join('-');
+              return [year, month, day]
           }
           
           const urlParams = new URLSearchParams(window.location.search);
           const userId = urlParams.get('p');
 
           window.addEventListener("load", function () {
-            var datePicker = document.querySelector(`#${dateInput}`);
+            var year = document.getElementById(`year_40`);
+            var month = document.getElementById(`month_40`);
+            var day = document.getElementById(`day_40`);
             var formattedDate = formatDate(currentStart);
-            datePicker.value = formattedDate;
+            year.value = formattedDate[0];
+            month.value = formattedDate[1];
+            day.value = formattedDate[2];
+
             var userIdField = document.querySelector(`#input_35`);
             userIdField.value = userId;
           });
@@ -550,143 +555,36 @@
               </span>
             </div>
           </li>
-          <li class="form-line hidden" data-type="control_datetime" id="id_40">
-            <label
-              class="form-label form-label-top form-label-auto"
-              id="label_40"
-              for="lite_mode_40"
-            >
-              Week Starting
-            </label>
-            <div id="cid_40" class="form-input-wide" data-layout="half">
-              <div data-wrapper-react="true">
-                <div style="display: none">
-                  <span
-                    class="form-sub-label-container"
-                    style="vertical-align: top"
-                  >
-                    <input
-                      type="tel"
-                      class="form-textbox validate[limitDate]"
-                      id="month_40"
-                      name="q40_weekStarting[month]"
-                      size="2"
-                      data-maxlength="2"
-                      data-age=""
-                      maxlength="2"
-                      value=""
-                      autocomplete="off"
-                      aria-labelledby="label_40 sublabel_40_month"
-                    />
-                    <span class="date-separate" aria-hidden="true">  - </span>
-                    <label
-                      class="form-sub-label"
-                      for="month_40"
-                      id="sublabel_40_month"
-                      style="min-height: 13px"
-                      aria-hidden="false"
-                    >
-                      Month
-                    </label>
-                  </span>
-                  <span
-                    class="form-sub-label-container"
-                    style="vertical-align: top"
-                  >
-                    <input
-                      type="tel"
-                      class="form-textbox validate[limitDate]"
-                      id="day_40"
-                      name="q40_weekStarting[day]"
-                      size="2"
-                      data-maxlength="2"
-                      data-age=""
-                      maxlength="2"
-                      value=""
-                      autocomplete="off"
-                      aria-labelledby="label_40 sublabel_40_day"
-                    />
-                    <span class="date-separate" aria-hidden="true">  - </span>
-                    <label
-                      class="form-sub-label"
-                      for="day_40"
-                      id="sublabel_40_day"
-                      style="min-height: 13px"
-                      aria-hidden="false"
-                    >
-                      Day
-                    </label>
-                  </span>
-                  <span
-                    class="form-sub-label-container"
-                    style="vertical-align: top"
-                  >
-                    <input
-                      type="tel"
-                      class="form-textbox validate[limitDate]"
-                      id="year_40"
-                      name="q40_weekStarting[year]"
-                      size="4"
-                      data-maxlength="4"
-                      data-age=""
-                      maxlength="4"
-                      value=""
-                      autocomplete="off"
-                      aria-labelledby="label_40 sublabel_40_year"
-                    />
-                    <label
-                      class="form-sub-label"
-                      for="year_40"
-                      id="sublabel_40_year"
-                      style="min-height: 13px"
-                      aria-hidden="false"
-                    >
-                      Year
-                    </label>
-                  </span>
-                </div>
-                <span
-                  class="form-sub-label-container"
-                  style="vertical-align: top"
-                >
-                  <input
-                    type="text"
-                    class="form-textbox validate[limitDate, validateLiteDate]"
-                    id="lite_mode_40"
-                    size="12"
-                    data-maxlength="12"
-                    maxlength="12"
-                    data-age=""
-                    value=""
-                    data-format="mmddyyyy"
-                    data-seperator="-"
-                    placeholder="MM-DD-YYYY"
-                    autocomplete="off"
-                    aria-labelledby="label_40 sublabel_40_litemode"
-                  />
-                  <img
-                    class="newDefaultTheme-dateIcon icon-liteMode"
-                    alt="Pick a Date"
-                    id="input_40_pick"
-                    src="https://cdn.jotfor.ms/images/calendar.png"
-                    data-component="datetime"
-                    aria-hidden="true"
-                    data-allow-time="No"
-                    data-version="v2"
-                  />
-                  <label
-                    class="form-sub-label"
-                    for="lite_mode_40"
-                    id="sublabel_40_litemode"
-                    style="min-height: 13px"
-                    aria-hidden="false"
-                  >
-                    [[Hidden]]
-                  </label>
-                </span>
-              </div>
-            </div>
-          </li>
+
+      <li class="form-line hidden" data-type="control_datetime" id="id_40">
+        <label class="form-label form-label-top form-label-auto" id="label_40" for="day_40"> Week Starting </label>
+        <div id="cid_40" class="form-input-wide" data-layout="half">
+          <div data-wrapper-react="true" class="extended notLiteMode">
+            <span class="form-sub-label-container day" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[limitDate]" id="day_40" name="q40_weekStarting[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" autoComplete="off" aria-labelledby="label_40 sublabel_40_day" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="day_40" id="sublabel_40_day" style="min-height:13px" aria-hidden="false"> Day </label>
+            </span>
+            <span class="form-sub-label-container month" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[limitDate]" id="month_40" name="q40_weekStarting[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="" autoComplete="off" aria-labelledby="label_40 sublabel_40_month" />
+              <span class="date-separate" aria-hidden="true">
+                 -
+              </span>
+              <label class="form-sub-label" for="month_40" id="sublabel_40_month" style="min-height:13px" aria-hidden="false"> Month </label>
+            </span>
+            <span class="form-sub-label-container year" style="vertical-align:top">
+              <input type="tel" class="form-textbox validate[limitDate]" id="year_40" name="q40_weekStarting[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="" autoComplete="off" aria-labelledby="label_40 sublabel_40_year" />
+              <label class="form-sub-label" for="year_40" id="sublabel_40_year" style="min-height:13px" aria-hidden="false"> Year </label>
+            </span>
+            <span class="form-sub-label-container" style="vertical-align:top">
+              <img class=" newDefaultTheme-dateIcon icon-seperatedMode" alt="Pick a Date" id="input_40_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" />
+              <label class="form-sub-label" for="input_40_pick" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="true"> Date Picker Icon </label>
+            </span>
+          </div>
+        </div>
+      </li>
           <li
             class="form-line jf-required"
             data-type="control_textbox"
